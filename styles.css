@@ -1,0 +1,159 @@
+* {/* o "*" é um seletor universal*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*essa opção vai sempre considera a width que colocar, que é 580px ela não vai trocar*/
+
+}
+
+ul{
+    list-style: none; /*vai tirar os pontinhos da lista*/ 
+}
+
+body {
+  background-image: url(./assentes/bg.jpg);
+  background-position: top center;/*vai ficar centralizado no topo*/
+  background-size: 100% auto;/*o 100% vai mudar junto com o tamanho da pagina, a imagem vai crescer e diminuir junto com a pagina. o auto é altura*/ 
+  background-repeat: no-repeat; /*para não repitir a imagem*/
+  background-color: #121214;/*cor no formato de hexadecimal*/
+}
+
+body * { /*vai pegar todos os elementos do body*/
+  font-family: 'inter', sans-serif; /*o inter é fote que peguei fo google, se não achar a fonte o sans-serif vai trocar*//*sans-serif é pra tirar as pontas da letra*/
+  line-height: 160%; /*altura da linha*/
+}
+
+header {
+  margin-top: 32px;
+  height: calc(120px + 32px)
+}
+
+header div{
+  width: 120px;
+  margin: auto;
+  background-image: linear-gradient(90deg, #9572fc 0%, #43e7ad 50.52%, #e2d45c 100%);
+
+  border-radius: 50%;
+
+  display: flex;
+  padding: 4px;
+
+  transition: transform .3s; /*é o tempo que a imagem vai crescer*/
+}
+
+header div:hover {/*esse div:hover é pra quando passar o mouse em cima da image ele crescer um pouco*/
+  transform: scale(1.1);
+}
+
+header div img{
+  width: 100%;
+  border-radius: 50%;
+
+}
+
+main {
+    max-width: 580px;
+    width: 90%; /* vai ocupar 90% de largura da tela*/ 
+    margin: 32px auto;/*margin é ao redor da caixa, o auto vai deixar automatica*/ /*o margin quando tem dois falor é identificado com em cima e embaixo*/
+
+    display: grid;
+    gap: 24px;
+
+    
+}
+
+section {/*vai pegar todos os section*/
+  color: white;
+  background-image: linear-gradient(90deg, #9572fc 0%, #43e7ad 50.52%, #e2d45c 100%);
+  padding-top: 4px;
+  border-radius: 10px;
+}
+
+section div {
+  background-color: #2a2634;
+  padding: 32px;
+  padding-top: 24px;
+  border-radius: 8px;
+}
+
+section h2 {
+  letter-spacing: -0.47px; /*espaço entre as letras*/
+}
+
+section p{
+  letter-spacing: -0.18;
+  color: #a1a1aa
+}
+
+section ul {
+  display: flex;
+  gap: 16px;
+
+  margin-top: 24px;/*é o topo da ul */
+}
+
+section ul li {
+  transition: transform .3s;
+}
+
+section ul li:hover{
+  transform: scale(1.1);
+}
+
+
+.games-list img{
+  width: 90px;/*largura de 90px*//*não precisa colocar a altura*/
+  border-radius: 8px;/*é a borda do img do game list*/
+}
+
+.channel-list img{
+  border-radius: 50%;/*pra deixar a borda redonda*/
+  width: 70px;
+  
+}
+
+/*animation*/
+
+header div {
+  animation: fromTop .7s .2s backwards;
+}
+
+main section {
+  animation: frombotton .7s backwards;
+}
+
+main section:nth-child(1) {
+  animation-delay: 0;
+}
+
+main section:nth-child(2){
+  animation-delay: .4s;
+}
+
+main section:nth-child(3){
+  animation-delay: .8s;
+}
+
+@keyframes fromTop {
+  from{
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+
+  to{
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
+
+@keyframes frombotton {
+  from{
+      opacity: 0;
+      transform: translateY(30px)
+  }
+
+  to{
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
